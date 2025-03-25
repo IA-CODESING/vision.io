@@ -84,17 +84,30 @@ body {
 @media (max-width: 768px) {
     .nav {
         flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #fff; /* Fondo blanco para el nav en móvil */
     }
 
     .nav__menu, .nav__social {
         display: none;
         width: 100%;
-        text-align: center;
+        opacity: .8;
     }
-
-    .nav__menu.active, .nav__social.active {
+    
+    .nav__menu.active {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        background-color: #fff; /* Fondo blanco para el menú */
+        padding: 10px 0;
+    }
+
+    .nav__social.active {
+        display: flex;
+        justify-content: center;
+        background-color: #fff; /* Fondo blanco para las redes sociales */
+        padding: 10px 0;
     }
 
     .nav__menu li, .nav__social li {
@@ -103,18 +116,25 @@ body {
 
     .nav__toggle {
         display: block;
-        order: 1;
+        order: 2; /* Mover el toggle a la derecha */
     }
 
     .nav__logo {
-        margin-left: 0;
         order: 0;
     }
 
     .nav__social {
-        margin-right: 0;
-        justify-content: center;
-        order: 2;
+        order: 1;
+        width: auto; /* Permitir que las redes sociales se ajusten al contenido */
+    }
+
+    .nav__social li {
+        display: inline-block; /* Mostrar las redes sociales en línea */
+        margin: 0 10px;
+    }
+
+    .nav__link {
+        color: #333; /* Asegurar que los enlaces del menú sean visibles */
     }
 }
 
